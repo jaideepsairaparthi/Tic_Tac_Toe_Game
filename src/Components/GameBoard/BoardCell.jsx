@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import './animations.css';
 
 const BoardCell = ({ emoji, onClick, isWinningCell, isActive }) => {
   return (

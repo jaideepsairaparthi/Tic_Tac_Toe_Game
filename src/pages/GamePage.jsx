@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import BoardCell from '../components/GameBoard/BoardCell';
 import GameControls from '../components/GameBoard/GameControls';
@@ -7,7 +7,6 @@ import CategorySelector from '../components/UI/CategorySelector';
 import ModeSelector from '../components/UI/ModeSelector';
 import { checkWinner, getRandomEmoji } from '../utils/gameLogic';
 import { getRandomAIMove } from '../utils/ai';
-import './styles.css';
 
 const EMOJI_THEMES = {
   Cyberpunk: ['🤖', '👾', '🦾', '👽', '🔮', '🎮', '💾', '🛸'],
