@@ -100,9 +100,23 @@ const GamePage = ({ onReturnToMenu }) => {
   return (
     <div className="game-container">
       <div className="game-header">
-        <h1 className="game-title">⚡ Emoji Grid Wars ⚡</h1>
-        <p className="game-subtitle">A Futuristic Strategy Game</p>
-      </div>
+  <motion.h1 
+    className="game-title"
+    initial={{ y: -50, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+    ⚡ Emoji Grid Wars ⚡
+  </motion.h1>
+  <motion.p
+    className="game-subtitle"
+    initial={{ y: 50, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.5, delay: 0.2 }}
+  >
+    A Futuristic Strategy Game
+  </motion.p>
+</div>
 
       {!gameState.mode ? (
         <ModeSelector 

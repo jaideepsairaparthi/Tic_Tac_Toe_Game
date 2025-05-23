@@ -15,6 +15,7 @@ const HomePage = ({ onStartGame }) => {
         <p>A futuristic strategy game where emojis battle for grid dominance</p>
       </div>
       
+      
       <div className="action-buttons">
         <AnimatedButton 
           onClick={onStartGame}
