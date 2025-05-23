@@ -13,7 +13,7 @@ export const checkWinner = (board, player) => {
       return line;
     }
   }
-  return null;    
+  return null;
 };
 
 export const getRandomEmoji = (player, gameState, emojiThemes) => {

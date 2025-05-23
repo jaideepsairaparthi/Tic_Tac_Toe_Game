@@ -14,10 +14,10 @@ const CategorySelector = ({
 
   return (
     <div className="category-selector">
-      <h2>Select Emoji Themes</h2>
+      <h2>Select Emoji Categories</h2>
       
       <div className="category-group">
-        <h3>Player 1 Theme</h3>
+        <h3>Player 1 Category</h3>
         <div className="category-options">
           {availableCategories.map(category => (
             <AnimatedButton
@@ -34,7 +34,7 @@ const CategorySelector = ({
 
       {player1Category && (
         <div className="category-group">
-          <h3>{mode === 'ai' ? 'AI' : 'Player 2'} Theme</h3>
+          <h3>{mode === 'ai' ? 'AI' : 'Player 2'} Category</h3>
           <div className="category-options">
             {remainingCategories.map(category => (
               <AnimatedButton
@@ -57,7 +57,7 @@ const CategorySelector = ({
             variant="primary"
             size="large"
           >
-            Start Battle
+            Start Game
           </AnimatedButton>
         </div>
       )}

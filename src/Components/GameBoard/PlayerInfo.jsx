@@ -15,7 +15,7 @@ const PlayerInfo = ({ turn, mode, winner, player1Category, player2Category }) =>
           animate={{ scale: 1.1 }}
           transition={{ type: 'spring', stiffness: 500 }}
         >
-          {getPlayerName(turn)}'s Turn
+          {getPlayerName(turn)}'s Turn ({turn === 'player1' ? player1Category : player2Category})
         </motion.div>
       ) : (
         <motion.div
@@ -24,18 +24,9 @@ const PlayerInfo = ({ turn, mode, winner, player1Category, player2Category }) =>
           animate={{ scale: 1.1, rotate: 0 }}
           transition={{ type: 'spring', stiffness: 300 }}
         >
-          🎉 {getPlayerName(winner)} Wins! 🎉
+          🎉 {getPlayerName(winner)} ({winner === 'player1' ? player1Category : player2Category}) Wins! 🎉
         </motion.div>
       )}
-      
-      <div className="player-categories">
-        <span className={`player1-category ${turn === 'player1' && !winner ? 'active' : ''}`}>
-          Player 1: {player1Category}
-        </span>
-        <span className={`player2-category ${turn === 'player2' && !winner ? 'active' : ''}`}>
-          {mode === 'ai' ? 'AI' : 'Player 2'}: {player2Category}
-        </span>
-      </div>
     </div>
   );
 };
