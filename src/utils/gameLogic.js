@@ -22,5 +22,3 @@ export const getRandomEmoji = (player, gameState) => {
     : EMOJI_THEMES[gameState.player2Category];
   return theme[Math.floor(Math.random() * theme.length)];
 };
-
-
