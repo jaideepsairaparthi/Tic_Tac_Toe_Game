@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import AnimatedButton from '../components/UI/AnimatedButton';
+import AnimatedButton from '../Components/UI/AnimatedButton';
 
 const HomePage = ({ onStartGame }) => {
   return (

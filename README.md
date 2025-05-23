@@ -1,7 +1,5 @@
 # ⚡ Emoji Grid Wars ⚡
 
-![Game Screenshot](./screenshot.png) <!-- Add your screenshot path here -->
-
 A futuristic strategy game where players battle with emojis on a dynamic grid. Built with React and Framer Motion for smooth animations.
 
 ## ✨ Features

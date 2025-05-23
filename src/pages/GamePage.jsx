@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import BoardCell from '../components/GameBoard/BoardCell';
-import GameControls from '../components/GameBoard/GameControls';
-import PlayerInfo from '../components/GameBoard/PlayerInfo';
-import CategorySelector from '../components/UI/CategorySelector';
-import ModeSelector from '../components/UI/ModeSelector';
+import BoardCell from '../Components/GameBoard/BoardCell';
+import GameControls from '../Components/GameBoard/GameControls';
+import PlayerInfo from '../Components/GameBoard/PlayerInfo';
+import CategorySelector from '../Components/UI/CategorySelector';
+import ModeSelector from '../Components/UI/ModeSelector';
 import { checkWinner, getRandomEmoji } from '../utils/gameLogic';
 import { getRandomAIMove } from '../utils/ai';
 
