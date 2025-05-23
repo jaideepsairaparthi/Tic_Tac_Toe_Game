@@ -13,12 +13,12 @@ export const checkWinner = (board, player) => {
       return line;
     }
   }
-  return null;
+  return null;    
 };
 
-export const getRandomEmoji = (player, gameState) => {
+export const getRandomEmoji = (player, gameState, emojiThemes) => {
   const theme = player === 'player1' 
-    ? EMOJI_THEMES[gameState.player1Category]
-    : EMOJI_THEMES[gameState.player2Category];
+    ? emojiThemes[gameState.player1Category]
+    : emojiThemes[gameState.player2Category];
   return theme[Math.floor(Math.random() * theme.length)];
 };

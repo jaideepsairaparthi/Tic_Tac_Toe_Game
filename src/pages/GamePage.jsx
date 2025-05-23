@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import BoardCell from '../components/GameBoard/BoardCell';
 import GameControls from '../components/GameBoard/GameControls';
@@ -31,8 +31,7 @@ const GamePage = ({ onReturnToMenu }) => {
 
   const handleMove = (index) => {
     if (gameState.board[index] !== null || gameState.winner) return;
-    
-    const emoji = getRandomEmoji(gameState.turn, gameState);
+    const emoji = getRandomEmoji(gameState.turn, gameState, EMOJI_THEMES);
     const newBoard = [...gameState.board];
     newBoard[index] = { player: gameState.turn, emoji };
 
