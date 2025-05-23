@@ -7,16 +7,26 @@ const AnimatedButton = ({
   size = 'medium',
   disabled = false
 }) => {
+  const baseStyle = {
+    border: 'none',
+    borderRadius: '8px',
+    cursor: disabled ? 'not-allowed' : 'pointer',
+    opacity: disabled ? 0.6 : 1,
+    fontWeight: 'bold',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+    overflow: 'hidden'
+  };
+
   const variants = {
     primary: {
       background: 'linear-gradient(90deg, var(--primary-neon), var(--secondary-neon))',
       color: 'black',
-      hover: { boxShadow: '0 0 15px var(--primary-neon)' }
     },
     secondary: {
       background: 'rgba(255, 255, 255, 0.1)',
       color: 'white',
-      hover: { boxShadow: '0 0 10px rgba(255, 255, 255, 0.3)' }
+      border: '1px solid rgba(255, 255, 255, 0.2)'
     }
   };
 
@@ -28,20 +38,17 @@ const AnimatedButton = ({
 
   return (
     <motion.button
-      className={`animated-button ${variant} ${size}`}
       onClick={onClick}
       disabled={disabled}
-      whileHover={!disabled ? variants[variant].hover : {}}
+      whileHover={!disabled ? { 
+        scale: 1.05,
+        boxShadow: variant === 'primary' ? '0 0 15px var(--primary-neon)' : '0 0 10px rgba(255, 255, 255, 0.3)'
+      } : {}}
       whileTap={!disabled ? { scale: 0.95 } : {}}
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
       style={{
+        ...baseStyle,
         ...variants[variant],
-        ...sizes[size],
-        border: 'none',
-        borderRadius: '8px',
-        cursor: disabled ? 'not-allowed' : 'pointer',
-        opacity: disabled ? 0.6 : 1
+        ...sizes[size]
       }}
     >
       {children}
